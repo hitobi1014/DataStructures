@@ -8,14 +8,15 @@
   </component>
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/code/code.iml" filepath="$PROJECT_DIR$/code/code.iml" />
       <module fileurl="file://$PROJECT_DIR$/intellij/code/code1.iml" filepath="$PROJECT_DIR$/intellij/code/code1.iml" />
       <module fileurl="file://$PROJECT_DIR$/intellij/solutions/solutions.iml" filepath="$PROJECT_DIR$/intellij/solutions/solutions.iml" />
-      <module fileurl="file://$PROJECT_DIR$/solutions/solutions1.iml" filepath="$PROJECT_DIR$/solutions/solutions1.iml" />
     </modules>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
+  </component>
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
   </component>
   <component name="libraryTable">
     <library name="lib">

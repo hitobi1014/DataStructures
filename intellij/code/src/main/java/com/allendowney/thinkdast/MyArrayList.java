@@ -22,7 +22,7 @@ public class MyArrayList<T> implements List<T> {
 	public MyArrayList() {
 		// You can't instantiate an array of T[], but you can instantiate an
 		// array of Object and then typecast it.  Details at
-		// http://www.ibm.com/developerworks/java/library/j-jtp01255/index.html
+		// http://www.ibm.com/developerworks/java/library/j-jtp01255/index.htmle
 		array = (T[]) new Object[10];
 		size = 0;
 	}
@@ -45,7 +45,14 @@ public class MyArrayList<T> implements List<T> {
 	@Override
 	public boolean add(T element) {
 		// TODO: FILL THIS IN!
-		return false;
+		if (size >= array.length) {
+			T[] bigger = (T[]) new Object[array.length * 2];
+			System.arraycopy(array, 0, bigger, 0, array.length);
+			array = bigger;
+		}
+		array[size] = element;
+		size++;
+		return true;
 	}
 
 	@Override
@@ -111,6 +118,11 @@ public class MyArrayList<T> implements List<T> {
 	@Override
 	public int indexOf(Object target) {
 		// TODO: FILL THIS IN!
+		for (int i = 0; i < size; i++) {
+			if (equals(target, array[i])) {
+				return i;
+			}
+		}
 		return -1;
 	}
 
@@ -119,7 +131,7 @@ public class MyArrayList<T> implements List<T> {
 	 * Handles the special case that the target is null.
 	 *
 	 * @param target
-	 * @param object
+	 * @param element
 	 */
 	private boolean equals(Object target, Object element) {
 		if (target == null) {
@@ -202,7 +214,9 @@ public class MyArrayList<T> implements List<T> {
 	@Override
 	public T set(int index, T element) {
 		// TODO: FILL THIS IN!
-		return null;
+		T old = element;
+		array[index] = (T) element;
+		return old;
 	}
 
 	@Override
